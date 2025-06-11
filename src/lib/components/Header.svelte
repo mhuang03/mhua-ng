@@ -3,11 +3,14 @@
   import SunIcon from "~icons/mynaui/sun";
   import MoonIcon from "~icons/mynaui/moon";
 
-  let { children, activeTab = "home" } = $props();
+  let { activeTab = "home", scrollY = $bindable() } = $props();
+  let scrolledDown = $derived(scrollY > 0);
 </script>
 
+<svelte:window bind:scrollY />
+
 <div class="sticky top-0">
-  <div class="navbar bg-base-100 shadow-xs">
+  <div class={`navbar bg-base-100${scrolledDown ? " shadow-xs" : ""}`}>
     <div class="navbar-start flex-row gap-5">
       <a class="text-2xl font-bold" href="/">mhua.ng</a>
       <div role="tablist" class="tabs tabs-border">
@@ -25,4 +28,3 @@
     </div>
   </div>
 </div>
-{@render children?.()}

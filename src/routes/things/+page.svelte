@@ -1,8 +1,10 @@
 <script>
-  import PageWrapper from "$lib/components/PageWrapper.svelte";
+  import Header from "$lib/components/Header.svelte";
 </script>
 
-<PageWrapper activeTab="things">
-  things
-  <a href="/things/thing1">thing1</a>
-</PageWrapper>
+<svelte:head>
+  <title>Things</title>
+</svelte:head>
+
+<Header activeTab="things" />
+things

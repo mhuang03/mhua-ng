@@ -1,7 +1,10 @@
 <script>
-  import PageWrapper from "$lib/components/PageWrapper.svelte";
+  import Header from "$lib/components/Header.svelte";
 </script>
 
-<PageWrapper>
-  404 bitch
-</PageWrapper>
+<svelte:head>
+  <title>404</title>
+</svelte:head>
+
+<Header />
+404 yikes

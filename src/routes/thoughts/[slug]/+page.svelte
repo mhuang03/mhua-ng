@@ -1,5 +1,5 @@
 <script>
-  import PageWrapper from "$lib/components/PageWrapper.svelte";
+  import Header from "$lib/components/Header.svelte";
 
   let { data } = $props();
   let { title, date, math } = data.metadata;
@@ -7,9 +7,8 @@
 
 <svelte:head>
   <title>{title}</title>
-  <meta name="date" content={date} />
 
-  <!-- {#if math}
+  {#if math}
     <script>
       MathJax = {
         tex: {
@@ -22,18 +21,16 @@
             ["\\[", "\\]"],
           ],
         },
-        svg: {
-          fontCache: "global",
-        },
       };
     </script>
-    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
     </script>
-  {/if} -->
+  {/if}
 </svelte:head>
 
-<PageWrapper activeTab="things">
+<Header activeTab="thoughts" />
+<div class="p-5">
   <article class="prose">
     <data.content />
   </article>
-</PageWrapper>
+</div>
