@@ -4,4 +4,5 @@
 
 <PageWrapper activeTab="things">
   things
+  <a href="/things/thing1">thing1</a>
 </PageWrapper>

@@ -3,7 +3,7 @@ import adapter from "@sveltejs/adapter-auto";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
 const mdsvexOptions = {
-  extensions: [".md"],
+  extensions: [".svx", ".md"],
 };
 
 const config = {
