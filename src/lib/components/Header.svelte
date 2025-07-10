@@ -12,16 +12,9 @@
 <div class="sticky top-0">
   <div class={`navbar bg-base-100 ${scrolledDown ? "shadow-xs" : ""}`}>
     <div class="navbar-start flex-row gap-2">
-      <div class="dropdown sm:hidden">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-          <MenuIcon class="w-8 h-8" />
-        </div>
-        <ul class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-          {#each ["things", "thoughts"] as tab}
-            <li><a class="text-lg" href="/{tab}">{tab}</a></li>
-          {/each}
-        </ul>
-      </div>
+      <label for="sidebar" aria-label="open sidebar" class="sm:hidden btn btn-circle btn-ghost">
+        <MenuIcon class="w-8 h-8" />
+      </label>
       <a class="px-3 text-xl font-bold sm:block hidden" href="/">mhua.ng</a>
       <div role="tablist" class="tabs tabs-border text-xl sm:block hidden">
         {#each ["things", "thoughts"] as tab}
