@@ -1,6 +1,4 @@
 <script>
-  import Header from "$lib/components/Header.svelte";
-
   let { data } = $props();
   let { title, date, math } = data.metadata;
 </script>
@@ -28,9 +26,6 @@
   {/if}
 </svelte:head>
 
-<Header activeTab="thoughts" />
-<div class="p-5">
-  <article class="prose">
-    <data.content />
-  </article>
-</div>
+<article class="prose">
+  <data.content />
+</article>

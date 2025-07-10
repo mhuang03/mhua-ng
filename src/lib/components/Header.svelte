@@ -1,30 +1,46 @@
-<script>
+<script lang="ts">
+  import { page } from "$app/state";
   import "../../styles.css";
-  import SunIcon from "~icons/mynaui/sun";
-  import MoonIcon from "~icons/mynaui/moon";
+  import ThemeSwitcher from "./ThemeSwitcher.svelte";
+  import MenuIcon from "~icons/mynaui/menu";
 
-  let { activeTab = "home", scrollY = $bindable() } = $props();
+  let { scrollY = $bindable() } = $props();
   let scrolledDown = $derived(scrollY > 0);
 </script>
 
 <svelte:window bind:scrollY />
 
 <div class="sticky top-0">
-  <div class={`navbar bg-base-100${scrolledDown ? " shadow-xs" : ""}`}>
-    <div class="navbar-start flex-row gap-5">
-      <a class="text-2xl font-bold" href="/">mhua.ng</a>
-      <div role="tablist" class="tabs tabs-border">
-        {#each ["things", "thoughts"] as page}
-          <a role="tab" class={`tab${activeTab == page ? " tab-active" : ""}`} href="/{page}">{page}</a>
+  <div class={`navbar bg-base-100 ${scrolledDown ? "shadow-xs" : ""}`}>
+    <div class="navbar-start flex-row gap-2">
+      <div class="dropdown sm:hidden">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+          <MenuIcon class="w-8 h-8" />
+        </div>
+        <ul class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+          {#each ["things", "thoughts"] as tab}
+            <li><a class="text-lg" href="/{tab}">{tab}</a></li>
+          {/each}
+        </ul>
+      </div>
+      <a class="px-3 text-xl font-bold sm:block hidden" href="/">mhua.ng</a>
+      <div role="tablist" class="tabs tabs-border text-xl sm:block hidden">
+        {#each ["things", "thoughts"] as tab}
+          <a
+            role="tab"
+            class={`text-lg tab ${page.url.pathname.startsWith(`/${tab}`) ? "tab-active" : ""}`}
+            href="/{tab}"
+          >
+            {tab}
+          </a>
         {/each}
       </div>
     </div>
+    <div class="navbar-center">
+      <a class="text-xl font-bold sm:hidden" href="/">mhua.ng</a>
+    </div>
     <div class="navbar-end">
-      <label class="btn btn-ghost btn-circle swap swap-rotate">
-        <input type="checkbox" class="theme-controller" value="business" />
-        <SunIcon class="swap-off h-8 w-8 fill-current" />
-        <MoonIcon class="swap-on h-8 w-8 fill-current" />
-      </label>
+      <ThemeSwitcher />
     </div>
   </div>
 </div>
