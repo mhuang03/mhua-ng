@@ -24,8 +24,8 @@
   <title>thoughts</title>
 </svelte:head>
 
-Musings of a XXI-century thinker.
-<ul class="list bg-base-100 rounded-box shadow-md max-w-2xl mx-auto">
+<p class="mb-5">Musings of a XXI-century thinker.</p>
+<ul class="list bg-base-100 rounded-box shadow-md">
   <div class="list-row p-5 rounded-box flex flex-col-reverse sm:flex-row justify-between gap-2 sm:gap-5">
     <TagFilter tags={data.tags} bind:selected />
     <label class="input w-full sm:max-w-50 sm:input-xs">
