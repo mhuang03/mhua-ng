@@ -9,7 +9,6 @@
 
   const checkScrollBar = () => {
     scrollBarVisible = document.documentElement.scrollHeight > document.documentElement.clientHeight;
-    console.log(scrollBarVisible);
   };
 
   onMount(() => {
