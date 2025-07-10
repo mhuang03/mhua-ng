@@ -8,7 +8,7 @@
   let isDark = $derived(currentTheme == "business");
 
   const setThemeCookie = (e: any) => {
-    const theme = e.target.checked ? "business" : "light";
+    const theme = e.target.checked ? "business" : "nord";
     currentTheme = theme;
 
     const expires = new Date();

@@ -1,6 +1,5 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import "../../styles.css";
   import ThemeSwitcher from "./ThemeSwitcher.svelte";
   import MenuIcon from "~icons/mynaui/menu";
 
