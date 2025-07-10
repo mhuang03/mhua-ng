@@ -2,4 +2,4 @@
   <title>things</title>
 </svelte:head>
 
-things
+Many great things to come.

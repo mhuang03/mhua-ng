@@ -8,6 +8,8 @@
       <h1 class="text-5xl font-bold">Hello there</h1>
       <p class="py-6">
         They really just let <em>anyone</em> have a website these days, huh?
+        <br />
+        This one's a work in progress, so please excuse the mess.
       </p>
     </div>
   </div>
