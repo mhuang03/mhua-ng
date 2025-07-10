@@ -12,7 +12,6 @@
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: nord --default, business;
-  exclude: rootscrollgutter;
 }
 
 @plugin "daisyui/theme" {
