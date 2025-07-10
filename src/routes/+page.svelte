@@ -1,6 +1,8 @@
-<svelte:head>
-  <title>Michael Huang</title>
-</svelte:head>
+<script>
+  import SEO from "$lib/components/SEO.svelte";
+</script>
+
+<SEO />
 
 <div class="hero min-h-[calc(100vh-64px)]">
   <div class="hero-content text-center">

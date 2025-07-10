@@ -36,41 +36,42 @@
   };
 </script>
 
-<div class="list-row p-5 rounded-box flex sm:flex-row justify-between gap-2">
-  <label class="swap swap-rotate self-start mr-2" onchange={toggleOpen}>
-    <input type="checkbox" class="hidden" name="filter" />
-    <FilterIcon class="cursor-pointer swap-off w-6 h-6" />
-    <CollapseIcon class="cursor-pointer swap-on w-6 h-6" />
-  </label>
-  <div class="flex flex-col w-full items-end sm:flex-row-reverse justify-between gap-2 sm:gap-5">
-    <label class="input bg-base-200 w-full sm:max-w-50 input-xs self-start">
+<div class="list-row p-5 rounded-box flex flex-col sm:flex-row justify-between gap-2">
+  <div class="flex items-end flex-row gap-2">
+    <label class="input bg-base-200 w-full sm:min-w-50 input-xs self-start">
       <SearchIcon class="h-[1em] opacity-50" />
       <input type="search" name="search" required placeholder="Search" bind:value={searchQuery} />
     </label>
-    <div class={"self-start overflow-hidden" + (isOpen ? "" : " h-0")}>
-      {#if isOpen}
-        <div transition:fade={{ duration: 100 }}>
-          {#each tags as tag}
-            <button
-              class={"cursor-pointer badge badge-xs mr-1 gap-1 whitespace-nowrap" +
-                (selected.has(tag) ? " badge-outline pr-1 font-bold" : " badge-dash")}
-              onclick={toggleTag(tag)}
-            >
-              {tag}
-              {#if selected.has(tag)}
-                <XIcon class="w-2 h-2 inline-block" />
-              {/if}
-            </button>
-          {/each}
-          <div class="w-full flex flex-row-reverse">
-            <button
-              transition:fade|global={{ duration: 100 }}
-              class="cursor-pointer text-xs text-right self-end block"
-              onclick={clearFilter}>clear tags</button
-            >
-          </div>
+
+    <label class="swap swap-rotate self-start" onchange={toggleOpen}>
+      <input type="checkbox" class="hidden" name="filter" />
+      <FilterIcon class="cursor-pointer swap-off w-6 h-6" />
+      <CollapseIcon class="cursor-pointer swap-on w-6 h-6" />
+    </label>
+  </div>
+  <div class={"self-start overflow-hidden" + (isOpen ? "" : " h-0")}>
+    {#if isOpen}
+      <div transition:fade={{ duration: 100 }}>
+        {#each tags as tag}
+          <button
+            class={"cursor-pointer badge badge-xs mr-1 gap-1 whitespace-nowrap" +
+              (selected.has(tag) ? " badge-outline pr-1 font-bold" : " badge-dash")}
+            onclick={toggleTag(tag)}
+          >
+            {tag}
+            {#if selected.has(tag)}
+              <XIcon class="w-2 h-2 inline-block" />
+            {/if}
+          </button>
+        {/each}
+        <div class="w-full flex flex-row-reverse">
+          <button
+            transition:fade|global={{ duration: 100 }}
+            class="cursor-pointer text-xs text-right self-end block"
+            onclick={clearFilter}>clear tags</button
+          >
         </div>
-      {/if}
-    </div>
+      </div>
+    {/if}
   </div>
 </div>

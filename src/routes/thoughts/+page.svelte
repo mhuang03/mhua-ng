@@ -1,4 +1,5 @@
 <script lang="ts">
+  import SEO from "$lib/components/SEO.svelte";
   import TagFilter from "$lib/components/TagFilter.svelte";
   import PostRow from "$lib/components/PostRow.svelte";
   import type { Post } from "$lib/types.js";
@@ -19,9 +20,7 @@
   );
 </script>
 
-<svelte:head>
-  <title>thoughts</title>
-</svelte:head>
+<SEO title="thoughts" description="Collection of thoughts." />
 
 <p class="mb-5">Musings of a XXI-century thinker.</p>
 <ul class="list bg-base-200 rounded-box shadow-md">

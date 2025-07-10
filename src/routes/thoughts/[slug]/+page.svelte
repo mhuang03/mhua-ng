@@ -1,11 +1,11 @@
 <script>
+  import SEO from "$lib/components/SEO.svelte";
+
   let { data } = $props();
-  let { title, date } = data.metadata;
+  let { title, date, description } = data.metadata;
 </script>
 
-<svelte:head>
-  <title>{title} | mhua.ng</title>
-</svelte:head>
+<SEO {title} {description} />
 
 <article class="prose">
   <data.content />
