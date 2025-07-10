@@ -7,7 +7,7 @@
     <div class="max-w-md">
       <h1 class="text-5xl font-bold">404</h1>
       <p class="py-6">
-        Looks like you found the secret non-existent page. <br /> Don't worry, it happens to the best of us.
+        Looks like you found a secret non-existent page. <br /> Don't worry, it happens to the best of us.
       </p>
     </div>
   </div>
