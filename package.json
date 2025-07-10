@@ -30,6 +30,8 @@
 		"@sveltejs/adapter-cloudflare": "^7.0.5",
 		"@tailwindcss/vite": "^4.1.8",
 		"daisyui": "^5.0.43",
+		"rehype-katex-svelte": "^1.2.0",
+		"remark-math": "^3.0.1",
 		"tailwindcss": "^4.1.8",
 		"unplugin-icons": "^22.1.0"
 	}

@@ -1,7 +1,10 @@
 ---
   title: Monkey + AI
+  description: A brief introduction to the world of agentic AI.
   date: 2025-06-11
-  math: false
+  tags: 
+    - monkey
+    - AI
 ---
 
 # Monkey + AI

@@ -5,7 +5,7 @@
 
 <svelte:head>
   <title>{title}</title>
-
+  <!-- 
   {#if math}
     <script>
       MathJax = {
@@ -23,7 +23,7 @@
     </script>
     <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
     </script>
-  {/if}
+  {/if} -->
 </svelte:head>
 
 <article class="prose">
