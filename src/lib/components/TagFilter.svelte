@@ -1,7 +1,6 @@
 <script lang="ts">
   import FilterIcon from "~icons/mynaui/filter";
   import SearchIcon from "~icons/mynaui/search";
-  import CollapseIcon from "~icons/mynaui/chevron-double-up";
   import XIcon from "~icons/mynaui/x";
   import { fade } from "svelte/transition";
 
@@ -46,7 +45,7 @@
     <label class="swap swap-rotate self-start" onchange={toggleOpen}>
       <input type="checkbox" class="hidden" name="filter" />
       <FilterIcon class="cursor-pointer swap-off w-6 h-6" />
-      <CollapseIcon class="cursor-pointer swap-on w-6 h-6" />
+      <FilterIcon class="-scale-100 cursor-pointer swap-on w-6 h-6" />
     </label>
   </div>
   <div class={"self-end sm:self-start overflow-hidden" + (isOpen ? "" : " h-0")}>
