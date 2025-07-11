@@ -10,7 +10,7 @@
 </script>
 
 <div
-  class="card items-center bg-base-200 shadow-md w-[45%] min-w-64 max-w-80 grow basis-0.5 border border-base-300"
+  class="card items-center bg-base-200 shadow-md w-[45%] min-w-64 grow basis-0.5 border border-base-300"
   transition:fade={{ duration: 100 }}
 >
   <figure class="px-5 pt-5 w-full overflow-hidden">

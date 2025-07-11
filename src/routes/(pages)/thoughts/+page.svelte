@@ -32,5 +32,3 @@
     <PostRow {post} />
   {/each}
 </ul>
-
-<!-- TODO: pagination -->

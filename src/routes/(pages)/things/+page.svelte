@@ -41,5 +41,3 @@
     <div class="w-[45%] min-w-64 grow basis-0.5"></div>
   {/if}
 </div>
-
-<!-- TODO: pagination -->
