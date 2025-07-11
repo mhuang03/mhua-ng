@@ -6,6 +6,5 @@ Written in SvelteKit and deployed to Cloudflare Pages.
 
 ### TODO
 
-- sitemap
 - rss feed?
 - pagination
