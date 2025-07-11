@@ -2,6 +2,8 @@
   import SEO from "$lib/components/SEO.svelte";
   import { TypeWriter } from "svelte-typewrite";
   import GithubIcon from "~icons/mdi/github";
+  import greetings from "$lib/greetings.json";
+  import { shuffle } from "$lib/utils";
 </script>
 
 <SEO />
@@ -10,12 +12,7 @@
   <div class="hero-content text-center">
     <div class="max-w-md">
       <div class="font-display text-5xl font-bold">
-        <TypeWriter
-          texts={["Hello there!"]}
-          repeat={1}
-          blinkDuration={1000}
-          endState={{ text: "typed", caret: "blink" }}
-        />
+        <TypeWriter texts={shuffle(greetings)} blinkDuration={1000} />
       </div>
       <p class="pt-6">
         They really just let <em>anyone</em> have a website these days, huh? Well, this one's property of me,

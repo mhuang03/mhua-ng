@@ -64,13 +64,12 @@
             {/if}
           </button>
         {/each}
-        <div class="w-full flex flex-row-reverse">
+        {#if selected.size > 0}
           <button
-            transition:fade|global={{ duration: 100 }}
-            class="cursor-pointer text-xs text-right self-end block"
-            onclick={clearFilter}>clear tags</button
+            class="link link-hover link-error cursor-pointer text-xs text-right self-end inline"
+            onclick={clearFilter}>clear</button
           >
-        </div>
+        {/if}
       </div>
     {/if}
   </div>
