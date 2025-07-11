@@ -1,6 +1,7 @@
 <script>
   import SEO from "$lib/components/SEO.svelte";
   import { TypeWriter } from "svelte-typewrite";
+  import GithubIcon from "~icons/mdi/github";
 </script>
 
 <SEO />
@@ -16,11 +17,25 @@
           endState={{ text: "typed", caret: "blink" }}
         />
       </div>
-      <p class="py-6">
-        They really just let <em>anyone</em> have a website these days, huh?
-        <br />
-        This one's a work in progress, so please excuse the mess.
+      <p class="pt-6">
+        They really just let <em>anyone</em> have a website these days, huh? Well, this one's property of me, Michael Huang.
       </p>
+      <br />
+      <p>I'm a fourth-year undergraduate at the University of Minnesota, studying Computer Science and Mathematics.</p>
+      <div class="divider"></div>
+      <div class="flex flex-row justify-between items-center">
+        <p class="text-xs font-semibold">huan1623 [at] umn [dot] edu</p>
+        <div class="flex flex-row gap-2">
+          <a
+            class="btn btn-sm btn-circle btn-ghost"
+            href="https://github.com/mhuang03/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubIcon class="cursor-pointed w-6 h-6" />
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

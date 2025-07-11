@@ -8,19 +8,19 @@
   published: true
 ---
 
-Get your very own proof help at [proofistrivial.com](https://proofistrivial.com), or visit the github repo [here](https://github.com/mhuang03/pftrivial).
+Get your very own proof help at [proofistrivial.com](https://proofistrivial.com), or visit the GitHub repo [here](https://github.com/mhuang03/pftrivial).
 
 ![Proof is Trivial!](/img/trivial.png)
 
-This little app was originally inspired by [theproofistrivial.com](https://www.theproofistrivial.com/), which is a bit of a long-standing in-joke website for the math people. A while ago I decided that the original was a little dated, and more importantly, could use a vocabulary update!
+This little app was originally inspired by [theproofistrivial.com](https://www.theproofistrivial.com/), which is a bit of a long-standing in-joke website for the math people. A while ago I decided that the original was a little dated and, more importantly, could use a vocabulary update!
 
 ### the design
 
-The original website was quite simple: There were a couple different opening phrases, then the code would choose two nouns and two adjectives, handling plurals and "a(n)"s along the way.
+The original website was quite simple: there were a couple different opening phrases, then the code would choose two nouns and two adjectives, handling plurals and "a(n)"s along the way.
 
-However, I wanted to add _much_ more customizability, and ended up with 7 different lists for all the different nouns, adjectives, degrading statements, theorems, etc. I decided to use a homegrown (why? no idea.) almost markdown-esque syntax to handle the singular/plural, a/an, imperative/gerund, and random digit details, and stored the words in the form of newline-separated text files.
+However, I wanted to add _much_ more customizability and ended up with 7 different lists for all the different nouns, adjectives, degrading statements, theorems, etc. I decided to use a homegrown (why? no idea) almost markdown-esque syntax to handle the singular/plural, a/an, imperative/gerund, and random digit details, then stored the words in the form of newline-separated text files.
 
-The original website was written in a single all-in-one html file, which you can see [here](https://github.com/alangpierce/TheProofIsTrivial). I took this as a challenge (completely unnecessarily) to bundle **my** version into a single file as well. I managed get everything in one file (other than the Google analytics injection and the favicon) rather easily with the use of esbuild.
+The original website was written in a single all-in-one html file, which you can see [here](https://github.com/alangpierce/TheProofIsTrivial). I took this as a challenge (completely unnecessarily) to bundle **my** version into a single file as well. I managed to get everything in one file (other than the Google Analytics injection and the favicon) rather easily with the use of esbuild.
 
 ### link sharing
 
@@ -32,13 +32,13 @@ Originally, I literally just took a URI-safe base64 encoding of the JS object an
 https://proofistrivial.com/?t=eyJkZWdyIjoiSXQncyUyMHNlbGYtZXZpZGVudCUyMGlmJTIweW91IiwibWV0aG9kIjoidHJhbnNmb3JtJTIwaXQlMjBpbnRvIiwiYWRqMSI6ImluZGlzY3JldGUiLCJhZGoxVm93ZWwiOnRydWUsImNvbnQiOiJhY3RpbmclMjBvbiUyMHRoZSIsIm5vdW4xIjoibW9kdWxlIiwiYWRqMiI6Imh5cGVyYm9saWMiLCJub3VuMiI6IkxpZSUyMGFsZ2VicmFzIiwidXNlIjoidXNlIiwidGhtIjoiRnJldWRlbnRoYWwlMjBzdXNwZW5zaW9uJTIwdGhlb3JlbSIsInRobU5vVGhlIjpmYWxzZX0%3D
 ```
 
-Eventually, I bit the bullet and designed a bit-wise base64 packing of the indicies of the terms from each list (and some extra bits for the random digit generation possibilities), which yielded much prettier and shorter links.
+Eventually, I bit the bullet and designed a bitwise base64 packing of the indices of the terms from each list (and some extra bits for the random digit generation possibilities), which yielded much prettier and shorter links.
 
 ```
 https://proofistrivial.com/?s=CNJIAtBAB_AYAdAAA
 ```
 
-Of course, I did the upgrade in a way that was backwards-compatible, if somebody out there still wants to use one of those long ugly links.
+Of course, I did the upgrade in a way that was backwards-compatible, if somebody out there still wants to use one of those long, ugly links.
 
 ### some shoutouts
 

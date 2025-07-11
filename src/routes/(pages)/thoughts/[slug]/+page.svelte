@@ -11,5 +11,3 @@
   <h1>{title}</h1>
   <data.content />
 </article>
-
-<!-- TODO: make images rounded -->
