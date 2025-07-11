@@ -9,7 +9,7 @@
 
 <svelte:window bind:scrollY />
 
-<div class="sticky top-0">
+<div class="sticky top-0 z-1">
   <div class={`navbar bg-base-100 ${scrolledDown ? "shadow-xs" : ""}`}>
     <div class="navbar-start flex-row gap-2">
       <label for="sidebar" aria-label="open sidebar" class="sm:hidden btn btn-square btn-ghost">

@@ -21,7 +21,5 @@
 
 <Drawer>
   <Header />
-  <div class="px-5 max-w-2xl mx-auto">
-    {@render children()}
-  </div>
+  {@render children()}
 </Drawer>
