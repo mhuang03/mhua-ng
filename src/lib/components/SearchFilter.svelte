@@ -39,7 +39,7 @@
   <div class="flex items-end flex-row gap-2">
     <label class="input bg-base-200 w-full sm:min-w-50 input-xs self-start">
       <SearchIcon class="h-[1em] opacity-50" />
-      <input type="search" name="search" required placeholder="Search" bind:value={searchQuery} />
+      <input type="search" name="search" placeholder="Search" bind:value={searchQuery} />
     </label>
 
     <label class="swap swap-rotate self-start" onchange={toggleOpen}>
