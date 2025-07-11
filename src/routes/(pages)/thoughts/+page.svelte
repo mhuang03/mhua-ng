@@ -22,7 +22,7 @@
 
 <SEO title="thoughts" description="The meandering musings of a XXI-century thinker." />
 
-<p class="mb-5">The meandering musings of a XXI-century thinker.</p>
+<h1 class="mb-5">The meandering musings of a XXI-century thinker.</h1>
 <ul class="list bg-base-200 rounded-box shadow-md">
   <TagFilter tags={data.tags} bind:selected bind:searchQuery />
   {#each filteredPosts as post}

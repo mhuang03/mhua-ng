@@ -12,7 +12,7 @@
   image="https://mhua.ng/favicon-96x96.png"
 />
 
-<p class="mb-5">A fairly random collection of potentially cool things.</p>
+<h1 class="mb-5">A fairly random collection of potentially cool things.</h1>
 <div class="flex flex-wrap gap-5">
   {#each data.things as thing}
     <div class="card items-center bg-base-200 shadow-md w-[45%] min-w-64 grow">
