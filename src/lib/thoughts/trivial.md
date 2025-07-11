@@ -8,7 +8,7 @@
   published: true
 ---
 
-Get your very own proof help at [proofistrivial.com](https://proofistrivial.com), or visit the GitHub repo [here](https://github.com/mhuang03/pftrivial).
+Get your very own proof help at [proofistrivial.com](https://proofistrivial.com), or visit the [GitHub repo](https://github.com/mhuang03/pftrivial).
 
 ![Proof is Trivial!](/img/trivial.png)
 
