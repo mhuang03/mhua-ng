@@ -12,7 +12,13 @@
   <div class="hero-content text-center">
     <div class="max-w-md">
       <div class="font-display text-5xl font-bold">
-        <TypeWriter texts={shuffle(greetings)} blinkDuration={1000} />
+        <TypeWriter
+          texts={shuffle(greetings)}
+          blinkDuration={1000}
+          typeSpeed={100}
+          afterTyped={{ blink: 3.5 }}
+          afterDeleted={{ blink: 1.5 }}
+        />
       </div>
       <p class="pt-6">
         They really just let <em>anyone</em> have a website these days, huh? Well, this one's property of me,

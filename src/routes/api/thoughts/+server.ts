@@ -26,7 +26,7 @@ async function getPosts() {
   }
 
   posts = posts.sort((first, second) => new Date(second.date).getTime() - new Date(first.date).getTime());
-  tags = Array.from(new Set(tags)).sort();
+  tags = Array.from(new Set(tags)).sort((a, b) => a.localeCompare(b));
 
   return {
     posts,

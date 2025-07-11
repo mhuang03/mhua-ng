@@ -48,28 +48,26 @@
       <FilterIcon class="-scale-100 cursor-pointer swap-on w-6 h-6" />
     </label>
   </div>
-  <div class={"self-end sm:self-start overflow-hidden" + (isOpen ? "" : " h-0")}>
-    {#if isOpen}
-      <div transition:fade={{ duration: 100 }}>
-        {#each tags as tag}
-          <button
-            class={"cursor-pointer badge badge-xs mr-1 gap-1 whitespace-nowrap" +
-              (selected.has(tag) ? " badge-outline pr-1 font-bold" : " badge-dash")}
-            onclick={toggleTag(tag)}
-          >
-            {tag}
-            {#if selected.has(tag)}
-              <XIcon class="w-2 h-2 inline-block" />
-            {/if}
-          </button>
-        {/each}
-        {#if selected.size > 0}
-          <button
-            class="link link-hover link-error cursor-pointer text-xs text-right self-end inline"
-            onclick={clearFilter}>clear</button
-          >
-        {/if}
-      </div>
-    {/if}
-  </div>
+  {#if isOpen}
+    <div transition:fade={{ duration: 100 }} class={"self-end sm:self-start overflow-hidden" + (isOpen ? "" : " h-0")}>
+      {#each tags as tag}
+        <button
+          class={"cursor-pointer badge badge-xs mr-1 gap-1 whitespace-nowrap" +
+            (selected.has(tag) ? " badge-outline pr-1 font-bold" : " badge-dash")}
+          onclick={toggleTag(tag)}
+        >
+          {tag}
+          {#if selected.has(tag)}
+            <XIcon class="w-2 h-2 inline-block" />
+          {/if}
+        </button>
+      {/each}
+      {#if selected.size > 0}
+        <button
+          class="link link-hover link-error cursor-pointer text-xs text-right self-end inline"
+          onclick={clearFilter}>clear</button
+        >
+      {/if}
+    </div>
+  {/if}
 </div>

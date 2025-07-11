@@ -1,9 +1,23 @@
 <script lang="ts">
   import SEO from "$lib/components/SEO.svelte";
+  import ThingCard from "$lib/components/ThingCard.svelte";
+  import SearchFilter from "$lib/components/SearchFilter.svelte";
+  import type { Thing } from "$lib/types.js";
 
   let { data } = $props();
+  let selected = $state(new Set<string>());
+  let searchQuery = $state("");
 
-  let defaultImage = "https://mhua.ng/favicon.svg";
+  let filteredThings = $derived.by(() =>
+    data.things.filter((thing: Thing) => {
+      const matchTags =
+        selected.size === 0 ? true : Array.from(selected).every((tag) => thing.tags && thing.tags.includes(tag));
+      const matchSearch =
+        thing.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        thing.description.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchTags && matchSearch;
+    })
+  );
 </script>
 
 <SEO
@@ -14,35 +28,18 @@
 
 <h1 class="mb-5">A fairly random collection of potentially cool things.</h1>
 <div class="flex flex-wrap gap-5">
-  {#each data.things as thing}
-    <div class="card items-center bg-base-200 shadow-md w-[45%] min-w-64 grow">
-      <figure class="px-5 pt-5 w-full overflow-hidden">
-        <a class="w-full" href={thing.visitURL ?? undefined} target="_blank" rel="noopener noreferrer">
-          <img
-            class="rounded-lg w-full h-32 object-cover object-top"
-            src={thing.image ?? defaultImage}
-            alt={thing.title}
-          />
-        </a>
-      </figure>
-      <div class="card-body w-full">
-        <a
-          class={thing.visitURL ? "link-hover" : ""}
-          href={thing.visitURL ?? undefined}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 class="card-title">{thing.title}</h2>
-        </a>
-        <p>{thing.description}</p>
-        <div class="card-actions justify-around">
-          {#if thing.postSlug}
-            <a class="link link-hover uppercase text-xs font-semibold" href="/thoughts/{thing.postSlug}">read more</a>
-          {/if}
-        </div>
-      </div>
-    </div>
+  <div class="card bg-base-200 shadow-md border border-base-300 basis-full">
+    <SearchFilter tags={data.tags} bind:selected bind:searchQuery />
+  </div>
+  {#if filteredThings.length === 0}
+    <p class="text-gray-500 basis-full">Nothing found matching your criteria.</p>
+  {/if}
+  {#each filteredThings as thing}
+    <ThingCard {thing} />
   {/each}
+  {#if filteredThings.length % 2 === 1}
+    <div class="w-[45%] min-w-64 grow basis-0.5"></div>
+  {/if}
 </div>
 
 <!-- TODO: pagination -->

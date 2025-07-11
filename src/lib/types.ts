@@ -11,6 +11,7 @@ export type Thing = {
   title: string;
   description: string;
   image: string;
+  tags?: string[];
   postSlug?: string;
   visitURL?: string;
 };
