@@ -18,7 +18,8 @@
         />
       </div>
       <p class="pt-6">
-        They really just let <em>anyone</em> have a website these days, huh? Well, this one's property of me, Michael Huang.
+        They really just let <em>anyone</em> have a website these days, huh? Well, this one's property of me,
+        <span class="font-semibold">Michael Huang</span>.
       </p>
       <br />
       <p>I'm a fourth-year undergraduate at the University of Minnesota, studying Computer Science and Mathematics.</p>
