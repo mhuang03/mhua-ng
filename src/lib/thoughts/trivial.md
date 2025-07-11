@@ -20,7 +20,9 @@ The original website was quite simple: there were a couple different opening phr
 
 However, I wanted to add _much_ more customizability and ended up with 7 different lists for all the different nouns, adjectives, degrading statements, theorems, etc. I decided to use a homegrown (why? no idea) almost markdown-esque syntax to handle the singular/plural, a/an, imperative/gerund, and random digit details, then stored the words in the form of newline-separated text files.
 
-The original website was written in a single all-in-one html file, which you can see [here](https://github.com/alangpierce/TheProofIsTrivial). I took this as a challenge (completely unnecessarily) to bundle **my** version into a single file as well. I managed to get everything in one file (other than the Google Analytics injection and the favicon) rather easily with the use of esbuild.
+Of course, the flippant dismissive attitude of this website wouldn't be complete without some search links! All of the nouns, adjectives, and theorems (and sneakily, the end-of-proof square as well) have links to help you search them on Wolfram MathWorld. No promises that you get anything, though.
+
+The code itself is done very simply in mostly vanilla ES6 JS, with some Pug templating. The original was written in a single all-in-one html file, which you can see [here](https://github.com/alangpierce/TheProofIsTrivial). I took this as a challenge (completely unnecessarily) to bundle **my** version into a single file as well. I managed to scrunch everything up (other than the Google Analytics injection and the favicon) rather easily with the use of esbuild.
 
 ### link sharing
 

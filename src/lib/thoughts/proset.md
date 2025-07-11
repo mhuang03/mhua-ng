@@ -8,7 +8,7 @@
   published: true
 ---
 
-Play it for yourself at [prosetgame.com](https://www.prosetgame.com), or visit the [GitHub repo](https://github.com/mhuang03/proset-site).
+Play the game yourself at [prosetgame.com](https://www.prosetgame.com), or visit the [GitHub repo](https://github.com/mhuang03/proset-site).
 
 ![ProSet](/img/proset.png)
 
