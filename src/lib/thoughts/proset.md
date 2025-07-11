@@ -10,7 +10,7 @@
 
 ![ProSet](/img/proset.png)
 
-Play it for yourself at [prosetgame.com](https://www.prosetgame.com).
+Play it for yourself at [prosetgame.com](https://www.prosetgame.com), or visit the github repo [here](https://github.com/mhuang03/proset-site).
 
 This project was one of my very first forays into making (and publishing!) a static website. It's written completely in vanilla HTML, CSS, and JS (_yikes_), hosted very simply on Netlify, but it's completely functional, if a little strangely laid out. I must say that Computer Modern was a very fitting choice, though.
 
@@ -32,4 +32,4 @@ In fact, the direct translation into linear algebra means you can take Gaussian 
 
 ### notes
 
-ProSet was originally introduced to me by a [friend](https://www.pramodna.com/) in a physical format, which you can find [here](https://www.thegamecrafter.com/games/proset).
+ProSet was originally introduced to me by my friend [Pramod](https://www.pramodna.com/) in a physical format, which you can find [here](https://www.thegamecrafter.com/games/proset).

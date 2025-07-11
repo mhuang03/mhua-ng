@@ -18,7 +18,11 @@
     <div class="card items-center bg-base-200 shadow-md w-[45%] min-w-64 grow">
       <figure class="px-5 pt-5 w-full overflow-hidden">
         <a class="w-full" href={thing.visitURL ?? undefined} target="_blank" rel="noopener noreferrer">
-          <img class="rounded-lg w-full h-32 object-cover" src={thing.image ?? defaultImage} alt={thing.title} />
+          <img
+            class="rounded-lg w-full h-32 object-cover object-top"
+            src={thing.image ?? defaultImage}
+            alt={thing.title}
+          />
         </a>
       </figure>
       <div class="card-body w-full">
