@@ -8,5 +8,6 @@
 <SEO {title} {description} />
 
 <article class="prose">
+  <h1>{title}</h1>
   <data.content />
 </article>

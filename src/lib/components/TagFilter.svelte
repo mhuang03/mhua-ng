@@ -36,7 +36,7 @@
   };
 </script>
 
-<div class="list-row p-5 rounded-box flex flex-col sm:flex-row justify-between gap-2">
+<div class="list-row p-5 rounded-box flex flex-col sm:flex-row gap-2">
   <div class="flex items-end flex-row gap-2">
     <label class="input bg-base-200 w-full sm:min-w-50 input-xs self-start">
       <SearchIcon class="h-[1em] opacity-50" />
@@ -49,7 +49,7 @@
       <CollapseIcon class="cursor-pointer swap-on w-6 h-6" />
     </label>
   </div>
-  <div class={"self-start overflow-hidden" + (isOpen ? "" : " h-0")}>
+  <div class={"self-end sm:self-start overflow-hidden" + (isOpen ? "" : " h-0")}>
     {#if isOpen}
       <div transition:fade={{ duration: 100 }}>
         {#each tags as tag}

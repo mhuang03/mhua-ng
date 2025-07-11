@@ -6,7 +6,6 @@
   import "katex/dist/katex.min.css";
 
   let { children } = $props();
-  export const prerender = true;
 
   onNavigate((navigation) => {
     if (!document.startViewTransition) return;

@@ -5,9 +5,8 @@
   tags: 
     - monkey
     - AI
+  published: false
 ---
-
-# Monkey + AI
 
 &#128584;+&#129302;=&#128169;
 

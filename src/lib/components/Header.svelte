@@ -12,7 +12,7 @@
 <div class="sticky top-0">
   <div class={`navbar bg-base-100 ${scrolledDown ? "shadow-xs" : ""}`}>
     <div class="navbar-start flex-row gap-2">
-      <label for="sidebar" aria-label="open sidebar" class="sm:hidden btn btn-circle btn-ghost">
+      <label for="sidebar" aria-label="open sidebar" class="sm:hidden btn btn-square btn-ghost">
         <MenuIcon class="w-8 h-8" />
       </label>
       <a class="px-3 text-xl font-bold sm:block hidden" href="/">mhua.ng</a>

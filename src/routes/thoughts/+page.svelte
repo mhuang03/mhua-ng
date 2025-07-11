@@ -20,9 +20,9 @@
   );
 </script>
 
-<SEO title="thoughts" description="Collection of thoughts." />
+<SEO title="thoughts" description="The meandering musings of a XXI-century thinker." />
 
-<p class="mb-5">Musings of a XXI-century thinker.</p>
+<p class="mb-5">The meandering musings of a XXI-century thinker.</p>
 <ul class="list bg-base-200 rounded-box shadow-md">
   <TagFilter tags={data.tags} bind:selected bind:searchQuery />
   {#each filteredPosts as post}

@@ -1,25 +1,11 @@
 ---
-  title: Testing Page With A Really Rather Long Title
-  description: Testing page with math and lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  date: 2025-06-10
+  title: Proof is Trivial!
+  description: A website that can explain every mathematical proof ever.
+  date: 2025-05-12
   tags:
-    - AI
-    - test
-    - test1
-    - test2
-    - AI3
-    - test4
-    - AI5
-    - test6
-    - AI7
-    - test8
-    - AI9
-    - test10
-    - AI11
-    - test12
-    - AI13
-    - test14
-  published: false
+    - math
+    - silly
+  published: true
 ---
 
 there is a $x^2$\$ test $\mathbb F_2^6$
