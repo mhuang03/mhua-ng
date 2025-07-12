@@ -5,7 +5,7 @@
   tags:
     - math
     - games
-  renderMath: false
+  renderMath: true
   published: true
 ---
 
