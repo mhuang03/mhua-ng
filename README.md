@@ -10,3 +10,4 @@ Written in SvelteKit and deployed to Cloudflare Pages.
 - pagination
 - query params to persist search/page
 - make tag labels interactable
+- skeletons for loading images
