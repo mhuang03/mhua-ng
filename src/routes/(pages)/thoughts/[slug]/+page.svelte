@@ -2,9 +2,9 @@
   import SEO from "$lib/components/SEO.svelte";
 
   let { data } = $props();
-  let { title, math, description } = data.metadata;
+  let { title, renderMath, description } = data.metadata;
 
-  if (math) import("katex/dist/katex.min.css");
+  if (renderMath) import("katex/dist/katex.min.css");
 </script>
 
 <SEO {title} {description} />

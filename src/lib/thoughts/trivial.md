@@ -5,7 +5,7 @@
   tags:
     - math
     - silly
-  math: true
+  renderMath: false
   published: true
 ---
 

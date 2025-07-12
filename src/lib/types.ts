@@ -3,7 +3,7 @@ export type Post = {
   description: string;
   date: string;
   tags?: string[];
-  math: boolean;
+  renderMath: boolean;
   published: boolean;
   slug: string;
 };
