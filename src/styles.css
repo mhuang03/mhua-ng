@@ -22,3 +22,8 @@
   --size-selector: 0.25rem;
   --size-field: 0.25rem;
 }
+
+:root {
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+}

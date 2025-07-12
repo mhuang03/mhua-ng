@@ -16,7 +16,7 @@
         <MenuIcon class="w-8 h-8" />
       </label>
       <a class="px-3 text-xl font-bold sm:block hidden" href="/">mhua.ng</a>
-      <div role="tablist" class="tabs tabs-border text-xl sm:block hidden">
+      <div role="tablist" class="tabs tabs-border text-xl sm:block hidden min-w-max">
         {#each ["things", "thoughts"] as tab}
           <a
             role="tab"

@@ -1,27 +1,8 @@
 <script>
-  import { afterNavigate, onNavigate } from "$app/navigation";
-  import { onMount } from "svelte";
+  import { onNavigate } from "$app/navigation";
 
   let { children } = $props();
-
   let drawerOpen = $state(false);
-  let scrollBarVisible = $state(false);
-
-  const checkScrollBar = () => {
-    scrollBarVisible = document.documentElement.scrollHeight > document.documentElement.clientHeight;
-  };
-
-  onMount(() => {
-    checkScrollBar();
-    window.addEventListener("resize", checkScrollBar);
-    return () => {
-      window.removeEventListener("resize", checkScrollBar);
-    };
-  });
-
-  afterNavigate(() => {
-    checkScrollBar();
-  });
 
   onNavigate(() => {
     if (drawerOpen) {
@@ -45,11 +26,3 @@
     </ul>
   </div>
 </div>
-
-{#if !scrollBarVisible}
-  <style>
-    :root {
-      scrollbar-gutter: auto;
-    }
-  </style>
-{/if}
