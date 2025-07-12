@@ -6,7 +6,7 @@
 
   let { post }: { post: Post } = $props();
 
-  let tags = post.tags ? post.tags.sort((a, b) => a.localeCompare(b)) : [];
+  let tags = $derived(post.tags ? post.tags.sort((a, b) => a.localeCompare(b)) : []);
 </script>
 
 <a href={`/thoughts/${post.slug}`} transition:slide={{ duration: 50, axis: "y" }}>
@@ -16,13 +16,11 @@
       <div class="text-xs uppercase font-semibold opacity-60">{formatDate(post.date)}</div>
       <br />
       <p class="text-xs">{post.description}</p>
-      {#if post.tags}
-        <p>
-          {#each tags as tag}
-            <span class="badge badge-xs badge-outline mr-1">{tag}</span>
-          {/each}
-        </p>
-      {/if}
+      <p>
+        {#each tags as tag}
+          <span class="badge badge-xs badge-outline mr-1">{tag}</span>
+        {/each}
+      </p>
     </div>
     <div></div>
     <RightChevron class="self-center w-5 h-5" />

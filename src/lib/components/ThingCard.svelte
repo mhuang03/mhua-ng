@@ -6,7 +6,7 @@
 
   let { thing }: { thing: Thing } = $props();
 
-  let tags = thing.tags ? thing.tags.sort((a, b) => a.localeCompare(b)) : [];
+  let tags = $derived(thing.tags ? thing.tags.sort((a, b) => a.localeCompare(b)) : []);
 </script>
 
 <div
@@ -32,13 +32,11 @@
       >
         <h2 class="card-title">{thing.title}</h2>
       </a>
-      {#if thing.tags}
-        <p>
-          {#each tags as tag}
-            <span class="badge badge-xs badge-outline mr-1">{tag}</span>
-          {/each}
-        </p>
-      {/if}
+      <p>
+        {#each tags as tag}
+          <span class="badge badge-xs badge-outline mr-1">{tag}</span>
+        {/each}
+      </p>
     </div>
     <p>{thing.description}</p>
     <div class="card-actions justify-around">
