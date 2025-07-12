@@ -3,7 +3,6 @@
   import Header from "$lib/components/Header.svelte";
   import Drawer from "$lib/components/Drawer.svelte";
   import "../styles.css";
-  import "katex/dist/katex.min.css";
 
   let { children } = $props();
 

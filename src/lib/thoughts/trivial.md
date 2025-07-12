@@ -5,6 +5,7 @@
   tags:
     - math
     - silly
+  math: true
   published: true
 ---
 

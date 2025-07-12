@@ -5,6 +5,7 @@
   tags:
     - math
     - games
+  math: false
   published: true
 ---
 

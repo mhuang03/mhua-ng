@@ -3,8 +3,9 @@ export type Post = {
   description: string;
   date: string;
   tags?: string[];
-  slug: string;
+  math: boolean;
   published: boolean;
+  slug: string;
 };
 
 export type Thing = {
