@@ -1,6 +1,6 @@
 ---
-  title: Proof is Trivial!
-  description: A website that can explain every mathematical proof ever.
+  title: Every Math Proof is Trivial
+  description: Mathematical proofs can get hard. I revamped an old website for laughing at your inadequacy.
   date: 2025-05-12
   tags:
     - math

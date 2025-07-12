@@ -1,6 +1,6 @@
 ---
-  title: ProSet
-  description: A rather mathematical take on the game Set.
+  title: "ProSet: The Game (The Website)"
+  description: An old website I made for playing a very mathematical card matching game.
   date: 2022-05-12
   tags:
     - math
