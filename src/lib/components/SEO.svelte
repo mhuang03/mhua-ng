@@ -26,5 +26,5 @@
   <meta property="og:description" content={description} />
   <meta property="og:image" content={image} />
 
-  <link rel="canonical" href={`https://mhua.ng/${page.url.pathname}`} />
+  <link rel="canonical" href={`https://mhua.ng${page.url.pathname}`} />
 </svelte:head>
