@@ -15,7 +15,7 @@ Recently, my friends and I finished [Monifactory](https://www.curseforge.com/min
 
 As a player of Minecraft since version 1.4, I've had a lot of time to discover the best parts of the game. I have clocked many (more than I care to admit) hours playing on Hypixel, engaging in 2-week Minecraft phases, building redstone contraptions, and much more.
 
-With that in mind, I find that the best Minecraft is modded Minecraft. You would be hard-pressed to find a modding community that's as diverse, capable, and widespread. Minecraft modpacks span an incredible spectrum of genres. My poison of choice? Tech modpacks.
+With that in mind, I find that the best Minecraft is modded Minecraft. You would be hard-pressed to find a modding community that's as diverse, capable, and widespread. Minecraft modpacks span an incredible spectrum of genres, but my poison of choice? Tech modpacks.
 
 ### the pack
 
@@ -31,7 +31,7 @@ All in all, Monifactory (on normal mode) falls on the lighter side of the spectr
 
 Our server mainly consisted of me and my friend [Stephen](https://steffnstuff.com/), with my roommate Kevin popping in intermittently. We began the playthrough somewhere near the end of December 2024, and finished it about half a year later, near the end of June 2025. Though there were some hiatuses (a couple multi-week stints of burnout :/), the content length promise of GregTech definitely delivered.
 
-Notably, this pack was (is still!) in active development. Halfway through, there were a slew of automation-breaking updates that took a couple of weeks to work through and fix up. Thankfully, we weren't put too far off by the additional work.
+Notably, this pack was (and still is, as of this post) in active development. Halfway through, there was a slew of automation-breaking updates that took a couple of weeks to work through and fix up. Thankfully, we weren't put too far off by the additional work.
 
 ### how is this even fun?
 
@@ -40,9 +40,9 @@ The reality is, a modpack like this is really only fun for a certain _kind_ of p
 
 The "shifts" are supposed to go a little like this: New automation and resource/power generation processes are first planned out and then executed, evaluations for next steps are made, then rinse and repeat.
 
-Realistically, plans are never perfect, nor their executions. The process often goes more like: Attempt to implement a new plan. Run into a hiccup, be it an unsourced material, an unforeseen gating, a misplaced machine or pipe, or more likely, the discovery that some previous setup wasn't sufficiently robust. Address said hiccup. More hiccups appear. Spiral into technical debt hell. Claw and fight your way out of _impending total base failure_. Fearfully check all aspects of the base for further failures. Tentatively accept the "fixed" status quo. Start planning again.
+Realistically, plans are never perfect, nor are their executions. The process often goes more like this: Attempt to implement a new plan. Run into a hiccup, be it an unsourced material, an unforeseen gating, a misplaced machine or pipe, or more likely, the discovery that some previous setup wasn't sufficiently robust. Address said hiccup. More hiccups appear. Spiral into technical debt hell. Claw and fight your way out of _impending total base failure_. Fearfully check all aspects of the base for further failures. Tentatively accept the "fixed" status quo. Start planning again.
 
-In this sense, progress is often accompanied by frantic shoring up of the rest of the base; kind of like a never-ending game of whack-a-mole, if every whack of a mole generates more mole holes, and all you can really do is buy more mallets and grow more hands. It's how I'd imagine being a software engineer at a company with a legacy codebase would feel like, except the only one to blame for poor system design and bad code hygiene is yourself.
+In this sense, progress is often accompanied by frantic shoring up of the rest of the base; kind of like a never-ending game of whack-a-mole, if every whack of a mole generates more mole holes, and all you can really do is buy more mallets and grow more hands. It's how I'd imagine being a software engineer at a company with a legacy codebase would feel, except the only one to blame for poor system design and bad code hygiene is yourself.
 
 Finding the brief moments of calm, the eyes of these industrial hurricanes, is where I think the "fun" lies. The perpetual search for a well-oiled, functional base gives an immense sense of satisfaction when a steady state is found. When everything is working well, taking a step back lets you appreciate how all the machines in your base, through all the processes you set up, function together in an intricate web of dependency, consumption, and production. Until the next quest demands more.
 
@@ -54,21 +54,21 @@ Let me provide an anecdote.
 
 Near the beginning of the game (MV, if you're interested), one very powerful (haha) source of resources and power is through a mod called Hostile Neural Networks (HNN). Through it, one can generate a plethora of basic metals, gems, mob drops, and more, all from some cobblestone, water, and power. The mod is themed around killing virtual mobs in "simulation chambers" and then producing loot in "fabrication chambers."
 
-Importantly, the main resource consumed by simulation chambers -- pulsating prediction matrices -- needs only ender pearls, which is one of the possible outputs (all other inputs can be obtained through some processing of cobblestone and water). Though the crafting tree is somewhat convoluted, using one simulation chamber to produce ender pearls is sufficient to support running something like 7 other simulation chambers. The process can thus be bootstrapped.
+Importantly, the main resource consumed by simulation chambers--pulsating prediction matrices--needs only ender pearls, which is one of the possible outputs (all other inputs can be obtained through some processing of cobblestone and water). Though the crafting tree is somewhat convoluted, using one simulation chamber to produce ender pearls is sufficient to support running something like 7 other simulation chambers. The process can thus be bootstrapped.
 
 In this manner, many of the early-game resources, like diamonds, redstone, iron, and more, can be automated given sufficient power; and wouldn't you know it, diamonds can be burned for power. As a result, HNN lines can bootstrap both resource and power generation, and setting them up is a fairly scalable way to obtain both.
 
-We started off with an HNN setup for power. It was small and just produced diamonds to run numismatic dynamos. Then, time passed and we needed more power and a stable source of more resources. Cue HNN setup #2 for the resources, and an upgrade to the setup #1. These two lines were intentionally kept separate (we wouldn't want the resource generation setup to accidentally cannibalize powergen inputs), and they got us through most of MV and HV. But the factory grew.
+We started off with an HNN setup for power. It was small and just produced diamonds to run numismatic dynamos. Then, time passed, and we needed more power and a stable source of more resources. Cue HNN setup #2 for the resources and an upgrade to setup #1. These two lines were intentionally kept separate (we wouldn't want the resource generation setup to accidentally cannibalize powergen inputs), and they got us through most of MV and HV. But the factory grew.
 
 At some point in late HV or early EV, we needed even more power. The old setup wasn't cutting it anymore. Since there wasn't enough space to keep expanding in place, and I couldn't just tear down and move our main power generation without catastrophic base failure, HNN setup #3 was built to increase power production.
 
-Soon thereafter, the base demanded more resources. I bit the bullet and made HNN setup #4 with a simulation chamber for every producible resource. This passive generation generated millions of each resource over the course of many months, and fulfilled the base's needs until almost the end (...~~foreshadowing~~).
+Soon thereafter, the base demanded more resources. I bit the bullet and made HNN setup #4 with a simulation chamber for every producible resource. This passive generation generated millions of each resource over the course of many months and fulfilled the base's needs until almost the end (...~~foreshadowing~~).
 
 History repeats itself, and so too did the increase in power demand. HNN setup #5 produced power and involved a couple hundred simulation chambers and another couple hundred dynamos. Honestly, it was pretty glorious. This was the last scale at which HNN-based power was feasible, after which other sources of power took over.
 
-By late game, I thought I had rinsed myself of HNN. _Boy was I wrong_. One day, parts of our base began to shut down. Various metal alloys weren't being stocked. Processes were breaking down. We tracked the problems down the chain of dependencies, and found out that the base completely ran out of iron. _Iron_. How was this even possible? GregTech has its ways.
+By late game, I thought I had rinsed myself of HNN. _Boy, was I wrong_. One day, parts of our base began to shut down. Various metal alloys weren't being stocked. Processes were breaking down. We tracked the problems down the chain of dependencies and found out that the base completely ran out of iron. _Iron_. How was this even possible? GregTech has its ways.
 
-Nevertheless, the factory demanded more iron, and HNN hitched its grubby little hands back onto my shoulder. This birthed HNN setup #6, which involved some late-game super-scaled multiblocks, and generated tens of thousands of select resources every second.
+Nevertheless, the factory demanded more iron, and HNN hitched its grubby little hands back onto my shoulder. This birthed HNN setup #6, which involved some late-game super-scaled multiblocks, generating tens of thousands of select resources every second.
 
 ### civil engineering
 
