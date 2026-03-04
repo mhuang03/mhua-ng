@@ -25,7 +25,7 @@
         <span class="font-semibold">Michael Huang</span>.
       </p>
       <br />
-      <p>I'm a fourth-year undergraduate at the University of Minnesota, studying Computer Science and Mathematics.</p>
+      <p>I'm a freshly-minted University of Minnesota alumnus, with interests in computer science and math.</p>
       <div class="divider"></div>
       <div class="flex flex-row justify-between items-center">
         <p class="text-xs font-semibold">huan1623 [at] umn [dot] edu</p>
