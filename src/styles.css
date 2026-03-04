@@ -1,17 +1,25 @@
 @import "@fontsource-variable/inter";
 @import "@fontsource-variable/buenard";
+@import "katex/dist/katex.min.css";
 @theme {
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
-  --font-serif: "Buenard Variable", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans:
+    "Inter Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif:
+    "Buenard Variable", ui-serif, Georgia, Cambria, "Times New Roman", Times,
+    serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
   /* ... */
 }
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
-  themes: nord --default, business;
+  themes:
+    nord --default,
+    business;
 }
 
 @plugin "daisyui/theme" {
