@@ -1,6 +1,6 @@
 import type { Handle } from "@sveltejs/kit";
 
-const PRELOAD_FONTS = ["inter-latin-wght-normal", "buenard-latin-wght-normal"];
+const PRELOAD_FONTS = ["inter-latin-wght-normal"];
 
 export const handle: Handle = async ({ event, resolve }) => {
   return await resolve(event, {

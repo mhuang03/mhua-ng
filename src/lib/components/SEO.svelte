@@ -25,6 +25,9 @@
   <meta property="og:title" content={formattedTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={image} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={`https://mhua.ng${page.url.pathname}`} />
+  <meta property="og:site_name" content="mhua.ng" />
 
   <link rel="canonical" href={`https://mhua.ng${page.url.pathname}`} />
 </svelte:head>

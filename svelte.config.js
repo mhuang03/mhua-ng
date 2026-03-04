@@ -16,6 +16,9 @@ const processImages = () => (tree) => {
       className.push("rounded-lg", "skeleton");
       node.properties.className = className;
 
+      node.properties.loading = "lazy";
+      node.properties.decoding = "async";
+
       const src = node.properties.src;
       if (src && src.startsWith("/") && !node.properties.width) {
         try {

@@ -1,6 +1,5 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import "../../styles.css";
   import SunIcon from "~icons/mynaui/sun";
   import MoonIcon from "~icons/mynaui/moon";
 

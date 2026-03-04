@@ -8,13 +8,14 @@ export const formatDate = (date: string) => {
 };
 
 export const shuffle = (array: any[]) => {
-  for (var i = array.length - 1; i > 0; i--) {
+  const copy = [...array];
+  for (var i = copy.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
+    var temp = copy[i];
+    copy[i] = copy[j];
+    copy[j] = temp;
   }
-  return array;
+  return copy;
 };
 
 // Svelte action: adds skeleton class to all <img> children, removes on load

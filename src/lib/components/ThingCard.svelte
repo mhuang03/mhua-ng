@@ -20,6 +20,8 @@
         class="rounded-lg w-full h-32 object-cover object-top skeleton"
         src={thing.image ?? defaultImage}
         alt={thing.title}
+        loading="lazy"
+        decoding="async"
       />
     </a>
   </figure>
