@@ -3,7 +3,8 @@
   import { skeletonImages } from "$lib/utils";
 
   let { data } = $props();
-  let { title, description } = data.metadata;
+  let title = $derived(data.metadata.title);
+  let description = $derived(data.metadata.description);
 </script>
 
 <SEO {title} {description} />
