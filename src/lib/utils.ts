@@ -16,3 +16,26 @@ export const shuffle = (array: any[]) => {
   }
   return array;
 };
+
+// Svelte action: adds skeleton class to all <img> children, removes on load
+export function skeletonImages(node: HTMLElement) {
+  const imgs = node.querySelectorAll<HTMLImageElement>("img");
+
+  const onLoad = (e: Event) => {
+    (e.currentTarget as HTMLElement).classList.remove("skeleton");
+  };
+
+  imgs.forEach((img) => {
+    if (img.complete) {
+      img.classList.remove("skeleton");
+    } else {
+      img.addEventListener("load", onLoad);
+    }
+  });
+
+  return {
+    destroy() {
+      imgs.forEach((img) => img.removeEventListener("load", onLoad));
+    },
+  };
+}

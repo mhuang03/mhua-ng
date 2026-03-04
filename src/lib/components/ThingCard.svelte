@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { Thing } from "$lib/types";
   import { fade } from "svelte/transition";
+  import { skeletonImages } from "$lib/utils";
 
   const defaultImage = "https://mhua.ng/favicon.svg";
 
@@ -13,10 +14,10 @@
   class="card items-center bg-base-200 shadow-md w-[45%] min-w-64 grow basis-0.5 border border-base-300"
   transition:fade={{ duration: 100 }}
 >
-  <figure class="px-5 pt-5 w-full overflow-hidden">
+  <figure class="px-5 pt-5 w-full overflow-hidden" use:skeletonImages>
     <a class="w-full" href={thing.visitURL ?? undefined} target="_blank" rel="noopener noreferrer">
       <img
-        class="rounded-lg w-full h-32 object-cover object-top"
+        class="rounded-lg w-full h-32 object-cover object-top skeleton"
         src={thing.image ?? defaultImage}
         alt={thing.title}
       />
