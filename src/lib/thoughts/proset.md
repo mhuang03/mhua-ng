@@ -10,7 +10,7 @@
 
 Play the game yourself at [prosetgame.com](https://www.prosetgame.com), or visit the [GitHub repo](https://github.com/mhuang03/proset-site).
 
-![ProSet](/img/proset.png)
+![ProSet](proset.png)
 
 This project was one of my very first forays into making (and publishing!) a static website. It's written completely in vanilla HTML, CSS, and JS (_yikes_), hosted very simply on Netlify, but it's completely functional, if a little strangely laid out. I must say that Computer Modern was a very fitting font choice, though.
 

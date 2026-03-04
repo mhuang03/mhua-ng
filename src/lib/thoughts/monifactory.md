@@ -10,7 +10,7 @@
 
 Recently, my friends and I finished [Monifactory](https://www.curseforge.com/minecraft/modpacks/monifactory). There's even a [base tour](https://www.youtube.com/watch?v=pfyTtgJk1RI).
 
-![Monifactory base screenshot](/img/monifactory.png)
+![Monifactory base screenshot](monifactory.png)
 
 As a player of Minecraft since version 1.4, I've had a lot of time to discover the best parts of the game. I have clocked many (more than I care to admit) hours playing on Hypixel, engaging in two-week Minecraft phases, building redstone contraptions, and much more.
 

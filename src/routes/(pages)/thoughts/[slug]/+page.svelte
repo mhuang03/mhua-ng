@@ -1,6 +1,5 @@
 <script>
   import SEO from "$lib/components/SEO.svelte";
-  import { skeletonImages } from "$lib/utils";
 
   let { data } = $props();
   let title = $derived(data.metadata.title);
@@ -9,7 +8,7 @@
 
 <SEO {title} {description} />
 
-<article class="prose" use:skeletonImages>
+<article class="prose">
   <h1>{title}</h1>
   <data.content />
 </article>

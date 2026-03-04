@@ -10,7 +10,7 @@
 
 Get your very own proof help at [proofistrivial.com](https://proofistrivial.com), or visit the [GitHub repo](https://github.com/mhuang03/pftrivial).
 
-![Proof is Trivial!](/img/trivial.png)
+![Proof is Trivial!](trivial.png)
 
 This little app was originally inspired by [theproofistrivial.com](https://www.theproofistrivial.com/), which is a bit of a long-standing in-joke website for the math people. A while ago I decided that the original was a little dated and, more importantly, could use a vocabulary update!
 
