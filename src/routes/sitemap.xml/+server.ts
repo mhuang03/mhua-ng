@@ -1,19 +1,24 @@
-/** @type {import('./$types').RequestHandler} */
-export async function GET({ url }) {
+import type { RequestHandler } from "./$types";
+
+export const GET: RequestHandler = async ({ url }) => {
   const body = sitemap(pages);
   const response = new Response(body);
-  response.headers.set("Cache-Control", "max-age=0, s-maxage=3600");
-  response.headers.set("Content-Type", "application/xml");
   return response;
-}
+};
 
 const site = "https://mhua.ng";
 const pages: string[] = ["", "things", "thoughts"];
 
 const posts = import.meta.glob("/src/lib/thoughts/*.md", { eager: true });
-const paths = Object.keys(posts);
-const slugs = paths.map((post) => post.split("/").at(-1)?.replace(".md", ""));
-pages.push(...slugs.map((slug) => `thoughts/${slug}`));
+for (const path of Object.keys(posts)) {
+  const file = posts[path];
+  if (file && typeof file === "object" && "metadata" in file) {
+    const metadata = file.metadata as { published?: boolean };
+    if (metadata.published === false) continue;
+  }
+  const slug = path.split("/").at(-1)?.replace(".md", "");
+  if (slug) pages.push(`thoughts/${slug}`);
+}
 
 const sitemap = (pages: string[]) => `<?xml version="1.0" encoding="UTF-8" ?>
 <urlset

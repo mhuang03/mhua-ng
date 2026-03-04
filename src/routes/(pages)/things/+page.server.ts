@@ -1,5 +1,5 @@
-export async function load({ fetch }) {
-  const response = await fetch("/api/things");
-  const things = await response.json();
-  return things;
+import { getThings } from "$lib/server/things";
+
+export async function load() {
+  return await getThings();
 }

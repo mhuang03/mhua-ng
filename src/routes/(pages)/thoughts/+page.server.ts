@@ -1,7 +1,5 @@
-import type { PageServerLoad } from "./$types";
+import { getPosts } from "$lib/server/posts";
 
-export const load: PageServerLoad = async ({ fetch }) => {
-  const response = await fetch("/api/thoughts");
-  const posts = await response.json();
-  return posts;
-};
+export async function load() {
+  return await getPosts();
+}
