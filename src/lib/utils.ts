@@ -1,10 +1,10 @@
 export const formatDate = (date: string) => {
-  const options: Intl.DateTimeFormatOptions = {
+  return new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
-  };
-  return new Date(date).toLocaleDateString("en-US", options);
+    timeZone: "UTC",
+  });
 };
 
 export const shuffle = <T>(array: T[]): T[] => {
