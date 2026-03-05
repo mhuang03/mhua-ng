@@ -1,3 +1,5 @@
+// @ts-check
+
 /**
  * Rehype plugin that runs after rehype-katex-svelte to detect which KaTeX font
  * files are actually needed by the rendered math on a page. Injects a
@@ -13,20 +15,23 @@
  * follows the pattern KaTeX_[Family]-[Style].
  */
 
-interface HastNode {
-  type: string;
-  value?: string;
-  properties?: { className?: string[] };
-  children?: HastNode[];
-}
+/**
+ * @typedef {{
+ *   type: string;
+ *   value?: string;
+ *   properties?: { className?: string[] };
+ *   children?: HastNode[];
+ * }} HastNode
+ */
 
-interface MdsvexVFile {
-  data: {
-    fm?: Record<string, unknown>;
-  };
-}
+/**
+ * @typedef {{
+ *   data: { fm?: Record<string, unknown> };
+ * }} MdsvexVFile
+ */
 
-const CLASS_TO_FONTS: Record<string, string[]> = {
+/** @type {Record<string, string[]>} */
+const CLASS_TO_FONTS = {
   // Math variables (italic by default in math mode)
   mathnormal: ["KaTeX_Math-Italic"],
 
@@ -68,12 +73,12 @@ const KNOWN_CLASSES = new Set(Object.keys(CLASS_TO_FONTS));
 
 /**
  * Scan a raw HTML string for KaTeX CSS class names.
+ * @param {string} html
+ * @param {Set<string>} fonts
+ * @param {{ value: boolean }} hasKatex
+ * @returns {void}
  */
-function scanRawHtml(
-  html: string,
-  fonts: Set<string>,
-  hasKatex: { value: boolean },
-): void {
+function scanRawHtml(html, fonts, hasKatex) {
   // Quick bail-out: if no "katex" substring, skip expensive regex
   if (!html.includes("katex")) return;
 
@@ -97,12 +102,12 @@ function scanRawHtml(
 /**
  * Recursively walk the HAST tree collecting KaTeX font references from both
  * structured elements and raw HTML nodes.
+ * @param {HastNode} node
+ * @param {Set<string>} fonts
+ * @param {{ value: boolean }} hasKatex
+ * @returns {void}
  */
-function walk(
-  node: HastNode,
-  fonts: Set<string>,
-  hasKatex: { value: boolean },
-): void {
+function walk(node, fonts, hasKatex) {
   // rehype-katex-svelte wraps output in {@html "..."} inside text nodes
   if (
     (node.type === "text" || node.type === "raw") &&
@@ -114,7 +119,7 @@ function walk(
 
   if (node.type === "element") {
     const classes = Array.isArray(node.properties?.className)
-      ? node.properties!.className!
+      ? /** @type {string[]} */ (node.properties?.className)
       : [];
 
     for (const cls of classes) {
@@ -130,12 +135,16 @@ function walk(
   }
 }
 
+/**
+ * @returns {(tree: HastNode, file: MdsvexVFile) => void}
+ */
 export default function rehypeKatexFonts() {
-  return (tree: HastNode, file: MdsvexVFile): void => {
+  return (tree, file) => {
     // skip tree crawl if the post doesn't opt into math rendering
     if (!file.data?.fm?.renderMath) return;
 
-    const fonts = new Set<string>();
+    /** @type {Set<string>} */
+    const fonts = new Set();
     const hasKatex = { value: false };
 
     if (tree.children) {
