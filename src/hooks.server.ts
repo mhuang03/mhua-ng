@@ -24,6 +24,7 @@ export const handle: Handle = async ({ event, resolve }) => {
   return await resolve(event, {
     preload: ({ type, path }) => {
       if (type === "font") {
+        if (!path.endsWith(".woff2")) return false;
         if (PRELOAD_FONTS.some((name) => path.includes(name))) return true;
         if (katexFonts.some((font) => path.includes(font))) return true;
         return false;
