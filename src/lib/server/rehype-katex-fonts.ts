@@ -4,7 +4,7 @@
  * `katexFonts` array into the mdsvex frontmatter metadata so it can be used
  * for per-page font preloading.
  *
- * rehype-katex-svelte emits KaTeX HTML as `raw` HAST nodes (HTML strings)
+ * rehype-katex-svelte emits KaTeX HTML as raw HAST nodes (HTML strings)
  * rather than structured HAST elements, so this plugin scans both HAST
  * elements and raw HTML strings for KaTeX CSS class names.
  *
@@ -13,8 +13,20 @@
  * follows the pattern KaTeX_[Family]-[Style].
  */
 
-/** @type {Record<string, string[]>} */
-const CLASS_TO_FONTS = {
+interface HastNode {
+  type: string;
+  value?: string;
+  properties?: { className?: string[] };
+  children?: HastNode[];
+}
+
+interface MdsvexVFile {
+  data: {
+    fm?: Record<string, unknown>;
+  };
+}
+
+const CLASS_TO_FONTS: Record<string, string[]> = {
   // Math variables (italic by default in math mode)
   mathnormal: ["KaTeX_Math-Italic"],
 
@@ -56,11 +68,12 @@ const KNOWN_CLASSES = new Set(Object.keys(CLASS_TO_FONTS));
 
 /**
  * Scan a raw HTML string for KaTeX CSS class names.
- * @param {string} html
- * @param {Set<string>} fonts
- * @param {{value: boolean}} hasKatex
  */
-function scanRawHtml(html, fonts, hasKatex) {
+function scanRawHtml(
+  html: string,
+  fonts: Set<string>,
+  hasKatex: { value: boolean },
+): void {
   // Quick bail-out: if no "katex" substring, skip expensive regex
   if (!html.includes("katex")) return;
 
@@ -75,8 +88,7 @@ function scanRawHtml(html, fonts, hasKatex) {
     const classes = match[1].split(" ");
     for (const cls of classes) {
       if (KNOWN_CLASSES.has(cls)) {
-        const mapped = CLASS_TO_FONTS[cls];
-        for (const font of mapped) fonts.add(font);
+        for (const font of CLASS_TO_FONTS[cls]) fonts.add(font);
       }
     }
   }
@@ -85,32 +97,30 @@ function scanRawHtml(html, fonts, hasKatex) {
 /**
  * Recursively walk the HAST tree collecting KaTeX font references from both
  * structured elements and raw HTML nodes.
- * @param {any} node
- * @param {Set<string>} fonts
- * @param {{value: boolean}} hasKatex
  */
-function walk(node, fonts, hasKatex) {
+function walk(
+  node: HastNode,
+  fonts: Set<string>,
+  hasKatex: { value: boolean },
+): void {
   // rehype-katex-svelte wraps output in {@html "..."} inside text nodes
-  if (node.type === "text" && typeof node.value === "string") {
-    scanRawHtml(node.value, fonts, hasKatex);
-    return;
-  }
-
-  if (node.type === "raw" && typeof node.value === "string") {
+  if (
+    (node.type === "text" || node.type === "raw") &&
+    typeof node.value === "string"
+  ) {
     scanRawHtml(node.value, fonts, hasKatex);
     return;
   }
 
   if (node.type === "element") {
     const classes = Array.isArray(node.properties?.className)
-      ? node.properties.className
+      ? node.properties!.className!
       : [];
 
     for (const cls of classes) {
       if (cls === "katex") hasKatex.value = true;
       if (KNOWN_CLASSES.has(cls)) {
-        const mapped = CLASS_TO_FONTS[cls];
-        for (const font of mapped) fonts.add(font);
+        for (const font of CLASS_TO_FONTS[cls]) fonts.add(font);
       }
     }
   }
@@ -121,11 +131,11 @@ function walk(node, fonts, hasKatex) {
 }
 
 export default function rehypeKatexFonts() {
-  return (/** @type {any} */ tree, /** @type {any} */ file) => {
+  return (tree: HastNode, file: MdsvexVFile): void => {
     // skip tree crawl if the post doesn't opt into math rendering
     if (!file.data?.fm?.renderMath) return;
 
-    const fonts = new Set();
+    const fonts = new Set<string>();
     const hasKatex = { value: false };
 
     if (tree.children) {
@@ -138,7 +148,7 @@ export default function rehypeKatexFonts() {
     }
 
     if (fonts.size > 0) {
-      if (!file.data) file.data = {};
+      if (!file.data) file.data = { fm: {} };
       if (!file.data.fm) file.data.fm = {};
       file.data.fm.katexFonts = Array.from(fonts).sort();
     }
