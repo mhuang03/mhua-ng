@@ -12,7 +12,7 @@
 </script>
 
 <div class="drawer">
-  <input id="sidebar" type="checkbox" class="drawer-toggle" bind:checked={drawerOpen} />
+  <input id="sidebar" type="checkbox" class="drawer-toggle" bind:checked={drawerOpen} aria-label="Toggle navigation menu" />
   <div class="drawer-content">
     {@render children()}
   </div>

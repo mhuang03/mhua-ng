@@ -34,8 +34,8 @@
   {#if filteredThings.length === 0}
     <p class="text-gray-500 basis-full">Nothing found matching your criteria.</p>
   {/if}
-  {#each filteredThings as thing}
-    <ThingCard {thing} />
+  {#each filteredThings as thing, i}
+    <ThingCard {thing} loading={i < 2 ? "eager" : "lazy"} />
   {/each}
   {#if filteredThings.length % 2 === 1}
     <div class="w-[45%] min-w-64 grow basis-0.5"></div>

@@ -9,11 +9,11 @@
   let tags = $derived(post.tags ? post.tags.sort((a, b) => a.localeCompare(b)) : []);
 </script>
 
-<a href={`/thoughts/${post.slug}`} transition:slide={{ duration: 50, axis: "y" }}>
-  <li class="list-row hover:bg-base-300">
+<li class="list-row hover:bg-base-300" transition:slide={{ duration: 50, axis: "y" }}>
+  <a href={`/thoughts/${post.slug}`} class="contents">
     <div>
       <div class="text-base font-bold">{post.title}</div>
-      <div class="text-xs uppercase font-semibold opacity-60">{formatDate(post.date)}</div>
+      <div class="text-xs uppercase font-semibold opacity-75">{formatDate(post.date)}</div>
       <br />
       <p class="text-xs">{post.description}</p>
       <p>
@@ -24,5 +24,5 @@
     </div>
     <div></div>
     <RightChevron class="self-center w-5 h-5" />
-  </li>
-</a>
+  </a>
+</li>

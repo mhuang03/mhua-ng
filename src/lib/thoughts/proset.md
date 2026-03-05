@@ -18,7 +18,7 @@ The essential premise of the game is similar to Set, in which one must find a "v
 
 This game's construction is interesting in that you are guaranteed a solution for any set of 7 cards.
 
-### some math
+## some math
 
 For the math-inclined, here's a slightly hand-wavey explanation for the existence of a solution:
 
@@ -30,6 +30,6 @@ This linear dependence, then, exactly guarantees a subset of cards in which each
 
 In fact, the direct translation into linear algebra means you can take Gaussian elimination to this problem, which is algorithmically more efficient than the brute-force solution.
 
-### notes
+## notes
 
-ProSet was originally introduced to me by my friend [Pramod](https://www.pramodna.com/) in a physical format, which you can find [here](https://www.thegamecrafter.com/games/proset).
+ProSet was originally introduced to me by my friend [Pramod](https://www.pramodna.com/) in a physical format, which you can find on [The Game Crafter](https://www.thegamecrafter.com/games/proset).

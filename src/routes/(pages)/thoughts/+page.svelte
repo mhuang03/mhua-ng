@@ -24,9 +24,11 @@
 
 <h1 class="mb-5">The meandering musings of a XXI-century thinker.</h1>
 <ul class="list bg-base-200 rounded-box shadow-md border border-base-300">
-  <SearchFilter tags={data.tags} bind:selected bind:searchQuery />
+  <li>
+    <SearchFilter tags={data.tags} bind:selected bind:searchQuery />
+  </li>
   {#if filteredPosts.length === 0}
-    <p class="text-gray-500 list-row">Nothing found.</p>
+    <li class="text-gray-500 list-row">Nothing found.</li>
   {/if}
   {#each filteredPosts as post}
     <PostRow {post} />

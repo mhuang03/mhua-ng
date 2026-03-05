@@ -5,12 +5,14 @@
     src,
     alt,
     sizes,
+    loading = "lazy" as "lazy" | "eager",
     class: className = "rounded-lg",
     ...rest
   }: {
     src: string;
     alt: string;
     sizes?: string;
+    loading?: "lazy" | "eager";
     class?: string;
     [key: string]: any;
   } = $props();
@@ -43,11 +45,11 @@
       {alt}
       {sizes}
       class="{className} skeleton"
-      loading="lazy"
+      {loading}
       decoding="async"
       {...rest}
     />
   {:else}
-    <img {src} {alt} class="{className} skeleton" loading="lazy" decoding="async" {...rest} />
+    <img {src} {alt} class="{className} skeleton" {loading} decoding="async" {...rest} />
   {/if}
 </span>

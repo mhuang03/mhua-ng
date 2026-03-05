@@ -5,7 +5,7 @@
 
   const defaultImage = "https://mhua.ng/favicon.svg";
 
-  let { thing }: { thing: Thing } = $props();
+  let { thing, loading = "lazy" }: { thing: Thing; loading?: "lazy" | "eager" } = $props();
 
   let tags = $derived(thing.tags ? thing.tags.sort((a, b) => a.localeCompare(b)) : []);
 </script>
@@ -21,6 +21,7 @@
         alt={thing.title}
         sizes="min(640px, calc(45vw - 40px))"
         class="rounded-lg w-full h-32 object-cover object-top"
+        {loading}
       />
     </a>
   </figure>
@@ -43,7 +44,7 @@
     <p>{thing.description}</p>
     <div class="card-actions justify-around">
       {#if thing.postSlug}
-        <a class="link link-hover uppercase text-xs font-semibold" href="/thoughts/{thing.postSlug}">read more</a>
+        <a class="link link-hover uppercase text-xs font-semibold" href="/thoughts/{thing.postSlug}">read more about {thing.title}</a>
       {/if}
     </div>
   </div>

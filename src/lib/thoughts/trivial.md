@@ -14,7 +14,7 @@ Get your very own proof help at [proofistrivial.com](https://proofistrivial.com)
 
 This little app was originally inspired by [theproofistrivial.com](https://www.theproofistrivial.com/), which is a bit of a long-standing in-joke website for the math people. A while ago I decided that the original was a little dated and, more importantly, could use a vocabulary update!
 
-### the design
+## the design
 
 The original website was quite simple: there were a couple different opening phrases, then the code would choose two nouns and two adjectives, handling plurals and "a(n)"s along the way.
 
@@ -22,9 +22,9 @@ However, I wanted to add _much_ more customizability and ended up with 7 differe
 
 Of course, the flippant dismissive attitude of this website wouldn't be complete without some search links! All of the nouns, adjectives, and theorems (and sneakily, the end-of-proof square as well) have links to help you search them on Wolfram MathWorld. No promises that you get anything, though.
 
-The code itself is done very simply in mostly vanilla ES6 JS, with some Pug templating. The original was written in a single all-in-one html file, which you can see [here](https://github.com/alangpierce/TheProofIsTrivial). I took this as a challenge (completely unnecessarily) to bundle **my** version into a single file as well. I managed to scrunch everything up (other than the Google Analytics injection and the favicon) rather easily with the use of esbuild.
+The code itself is done very simply in mostly vanilla ES6 JS, with some Pug templating. The original was written in a single all-in-one html file, which you can see in [the original repo](https://github.com/alangpierce/TheProofIsTrivial). I took this as a challenge (completely unnecessarily) to bundle **my** version into a single file as well. I managed to scrunch everything up (other than the Google Analytics injection and the favicon) rather easily with the use of esbuild.
 
-### link sharing
+## link sharing
 
 Upon sharing this website on [Reddit](https://www.reddit.com/r/math/comments/1k6hbvi/proof_is_trivial/), some people requested a hard link to share cool trivialities they were rolling.
 
@@ -42,7 +42,7 @@ https://proofistrivial.com/?s=CNJIAtBAB_AYAdAAA
 
 Of course, I did the upgrade in a way that was backwards-compatible, if somebody out there still wants to use one of those long, ugly links.
 
-### some shoutouts
+## some shoutouts
 
 How does someone as deranged as myself dream up all these mathematical nouns, adjectives, and theorem names? Well, Wikipedia and Wolfram MathWorld were great helps, but my friend [Pramod](https://www.pramodna.com) also helped me crowdsource many of the math terms.
 

@@ -16,7 +16,7 @@ As a player of Minecraft since version 1.4, I've had a lot of time to discover t
 
 With that in mind, I find that the best Minecraft is modded Minecraft. You would be hard-pressed to find a modding community that's as diverse, capable, and widespread. Minecraft modpacks span an incredible spectrum of genres, but my poison of choice? Tech modpacks.
 
-### the pack
+## the pack
 
 For those not in the know, Monifactory is a Minecraft modpack centered around the GregTech mod. GregTech is a very industrial factory-focused mod that primarily adds a ton of machines for shaping metals, performing chemistry, etching silicon, and much more, which transforms Minecraft into a factory-building resource-management game (think Factorio, Satisfactory, etc.). Quite the nerdy modpack.
 
@@ -26,13 +26,13 @@ Voltage tier names aren't purely for content organization, either. The electrici
 
 All in all, Monifactory (on normal mode) falls on the lighter side of the spectrum of _gregginess_. You play on peaceful difficulty, get relatively early creative flight, and crucially, fairly early AE2. This makes the pack much more palatable for those who prefer focusing on the factory aspect of GregTech and not so much the punishing early-game struggle (I'm looking at you, [GTNH](https://www.gtnewhorizons.com/)).
 
-### our playthrough
+## our playthrough
 
 Our server mainly consisted of me and my friend [Stephen](https://steffnstuff.com/), with my roommate Kevin popping in intermittently. We began the playthrough somewhere near the end of December 2024, and finished it about half a year later, near the end of June 2025. Though there were some hiatuses (a couple multi-week stints of burnout :/), the content length promise of GregTech definitely delivered.
 
 Notably, this pack was (and still is, as of this post) in active development. Halfway through, there was a slew of automation-breaking updates that took a couple of weeks to work through and fix up. Thankfully, we weren't put too far off by the additional work.
 
-### how is this even fun?
+## how is this even fun?
 
 I've been asked many a time by friends (who aren't into tech modpacks, evidently) how one even finds such a pack fun.
 The reality is, a modpack like this is really only fun for a certain _kind_ of person.
@@ -52,7 +52,7 @@ This satisfaction does not come without strife, and it certainly doesn't last.
 
 Let me provide an anecdote.
 
-### the hnn saga
+## the hnn saga
 
 Near the beginning of the game (MV, if you're interested), one very powerful (haha) source of resources and power is through a mod called Hostile Neural Networks (HNN). Through it, one can generate a plethora of basic metals, gems, mob drops, and more, all from some cobblestone, water, and power. The mod is themed around killing virtual mobs in "simulation chambers" and then producing loot in "fabrication chambers."
 
@@ -72,7 +72,7 @@ By late game, I thought I had rinsed myself of HNN. _Boy, was I wrong_. One day,
 
 Nevertheless, the factory demanded more iron, and HNN hitched its grubby little hands back onto my shoulder. This birthed HNN setup #6, which involved some late-game super-scaled multiblocks, generating tens of thousands of select resources every second.
 
-### civil engineering
+## civil engineering
 
 Though the aforementioned six HNN setups are somewhat of an extreme example, much of Monifactory's gameplay boils down to one thing: building, maintaining, and upgrading **infrastructure**. In much the same way that infrastructure makes or breaks a city, state, or country, it also makes or breaks a GregTech base.
 
@@ -80,7 +80,7 @@ Every successive material that must be made, in general, must eventually be made
 
 The fact that we have a server and play together adds to our collective enjoyment too. Making the effort to do things "right" rewards not just one's future self, but also the other players. Of course, having other people appreciate your work feels good too.
 
-### so what now
+## so what now
 
 Having finished this pack, we've moved the server over to GTNH (yes, the one I was jabbing at earlier). Considered by some the ultimate GregTech modpack, its name brings echoes of exploding machines and forgotten save files. We're taking a stab at it anyways.
 

@@ -35,6 +35,7 @@
             href="https://github.com/mhuang03/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub profile"
           >
             <GithubIcon class="cursor-pointed w-6 h-6" />
           </a>
