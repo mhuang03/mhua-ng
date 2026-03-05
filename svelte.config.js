@@ -4,6 +4,7 @@ import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex-svelte";
 import rehypeExternalLinks from "rehype-external-links";
+import rehypeKatexFonts from "./src/lib/server/rehype-katex-fonts.js";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 
@@ -17,6 +18,7 @@ const mdsvexOptions = {
   remarkPlugins: [remarkMath],
   rehypePlugins: [
     rehypeKatex,
+    rehypeKatexFonts,
     [
       rehypeExternalLinks,
       { target: "_blank", rel: ["noopener", "noreferrer"] },

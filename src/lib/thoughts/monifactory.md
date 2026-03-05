@@ -5,6 +5,7 @@
   tags:
     - Minecraft
     - games
+  renderMath: false
   published: true
 ---
 
