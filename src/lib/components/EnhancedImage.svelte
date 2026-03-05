@@ -47,9 +47,18 @@
       class="{className} skeleton"
       {loading}
       decoding="async"
+      fetchpriority={loading === "eager" ? "high" : "auto"}
       {...rest}
     />
   {:else}
-    <img {src} {alt} class="{className} skeleton" {loading} decoding="async" {...rest} />
+    <img
+      {src}
+      {alt}
+      class="{className} skeleton"
+      {loading}
+      decoding="async"
+      fetchpriority={loading === "eager" ? "high" : "auto"}
+      {...rest}
+    />
   {/if}
 </span>

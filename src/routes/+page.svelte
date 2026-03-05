@@ -9,38 +9,40 @@
 <SEO />
 
 <div class="hero min-h-[calc(100vh-64px)]">
-  <div class="hero-content text-center">
-    <div class="max-w-md">
-      <div class="font-display text-5xl font-bold">
-        <TypeWriter
-          texts={shuffle(greetings)}
-          blinkDuration={1000}
-          typeSpeed={100}
-          afterTyped={{ blink: 3.5 }}
-          afterDeleted={{ blink: 1.5 }}
-        />
-      </div>
-      <p class="pt-6">
-        They really just let <em>anyone</em> have a website these days, huh? Well, this one's property of me,
-        <span class="font-semibold">Michael Huang</span>.
-      </p>
-      <br />
-      <p>I'm a freshly-minted University of Minnesota alumnus, with interests in computer science and math.</p>
-      <div class="divider"></div>
-      <div class="flex flex-row justify-between items-center">
-        <p class="text-xs font-semibold">huan1623 [at] umn [dot] edu</p>
-        <div class="flex flex-row gap-2">
-          <a
-            class="btn btn-sm btn-circle btn-ghost"
-            href="https://github.com/mhuang03/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub profile"
-          >
-            <GithubIcon class="cursor-pointed w-6 h-6" />
-          </a>
+  <main>
+    <div class="hero-content text-center">
+      <div class="max-w-md">
+        <div class="font-display text-5xl font-bold">
+          <TypeWriter
+            texts={shuffle(greetings)}
+            blinkDuration={1000}
+            typeSpeed={100}
+            afterTyped={{ blink: 3.5 }}
+            afterDeleted={{ blink: 1.5 }}
+          />
+        </div>
+        <p class="pt-6">
+          They really just let <em>anyone</em> have a website these days, huh? Well, this one's property of me,
+          <span class="font-semibold">Michael Huang</span>.
+        </p>
+        <br />
+        <p>I'm a freshly-minted University of Minnesota alumnus, with interests in computer science and math.</p>
+        <div class="divider"></div>
+        <div class="flex flex-row justify-between items-center">
+          <p class="text-xs font-semibold">huan1623 [at] umn [dot] edu</p>
+          <div class="flex flex-row gap-2">
+            <a
+              class="btn btn-sm btn-circle btn-ghost"
+              href="https://github.com/mhuang03/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+            >
+              <GithubIcon class="cursor-pointed w-6 h-6" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </div>
