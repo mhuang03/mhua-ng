@@ -15,7 +15,17 @@
   transition:fade={{ duration: 100 }}
 >
   <figure class="px-5 pt-5 w-full overflow-hidden">
-    <a class="w-full" href={thing.visitURL ?? undefined} target="_blank" rel="noopener noreferrer">
+    {#if thing.visitURL}
+      <a class="w-full" href={thing.visitURL} target="_blank" rel="noopener noreferrer">
+        <EnhancedImage
+          src={thing.image ?? defaultImage}
+          alt={thing.title}
+          sizes="min(640px, calc(45vw - 40px))"
+          class="rounded-lg w-full h-32 object-cover object-top"
+          {loading}
+        />
+      </a>
+    {:else}
       <EnhancedImage
         src={thing.image ?? defaultImage}
         alt={thing.title}
@@ -23,18 +33,17 @@
         class="rounded-lg w-full h-32 object-cover object-top"
         {loading}
       />
-    </a>
+    {/if}
   </figure>
   <div class="card-body w-full">
     <div>
-      <a
-        class={thing.visitURL ? "link-hover" : ""}
-        href={thing.visitURL ?? undefined}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      {#if thing.visitURL}
+        <a class="link-hover" href={thing.visitURL} target="_blank" rel="noopener noreferrer">
+          <h2 class="card-title">{thing.title}</h2>
+        </a>
+      {:else}
         <h2 class="card-title">{thing.title}</h2>
-      </a>
+      {/if}
       <p>
         {#each tags as tag}
           <span class="badge badge-xs badge-outline mr-1">{tag}</span>

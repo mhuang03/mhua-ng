@@ -7,15 +7,30 @@ export const formatDate = (date: string) => {
   return new Date(date).toLocaleDateString("en-US", options);
 };
 
-export const shuffle = (array: any[]) => {
+export const shuffle = <T>(array: T[]): T[] => {
   const copy = [...array];
-  for (var i = copy.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = copy[i];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = copy[i];
     copy[i] = copy[j];
     copy[j] = temp;
   }
   return copy;
+};
+
+export const filterByTagsAndSearch = <T extends { title: string; description: string; tags?: string[] }>(
+  items: T[],
+  selectedTags: Set<string>,
+  searchQuery: string
+): T[] => {
+  const query = searchQuery.toLowerCase();
+  return items.filter((item) => {
+    const matchTags =
+      selectedTags.size === 0 || Array.from(selectedTags).every((tag) => item.tags?.includes(tag));
+    const matchSearch =
+      item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query);
+    return matchTags && matchSearch;
+  });
 };
 
 // Svelte action: adds skeleton class to all <img> children, removes on load

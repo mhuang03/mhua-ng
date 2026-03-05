@@ -9,10 +9,10 @@
 <SEO />
 
 <div class="hero min-h-[calc(100vh-64px)]">
-  <main>
+  <main id="main-content">
     <div class="hero-content text-center">
       <div class="max-w-md">
-        <div class="font-display text-5xl font-bold">
+        <h1 class="text-5xl font-bold">
           <TypeWriter
             texts={shuffle(greetings)}
             blinkDuration={1000}
@@ -20,7 +20,7 @@
             afterTyped={{ blink: 3.5 }}
             afterDeleted={{ blink: 1.5 }}
           />
-        </div>
+        </h1>
         <p class="pt-6">
           They really just let <em>anyone</em> have a website these days, huh? Well, this one's property of me,
           <span class="font-semibold">Michael Huang</span>.

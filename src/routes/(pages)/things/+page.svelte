@@ -2,22 +2,13 @@
   import SEO from "$lib/components/SEO.svelte";
   import ThingCard from "$lib/components/ThingCard.svelte";
   import SearchFilter from "$lib/components/SearchFilter.svelte";
-  import type { Thing } from "$lib/types.js";
+  import { filterByTagsAndSearch } from "$lib/utils";
 
   let { data } = $props();
   let selected = $state(new Set<string>());
   let searchQuery = $state("");
 
-  let filteredThings = $derived.by(() =>
-    data.things.filter((thing: Thing) => {
-      const matchTags =
-        selected.size === 0 ? true : Array.from(selected).every((tag) => thing.tags && thing.tags.includes(tag));
-      const matchSearch =
-        thing.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        thing.description.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchTags && matchSearch;
-    })
-  );
+  let filteredThings = $derived(filterByTagsAndSearch(data.things, selected, searchQuery));
 </script>
 
 <SEO
@@ -32,7 +23,7 @@
     <SearchFilter tags={data.tags} bind:selected bind:searchQuery />
   </div>
   {#if filteredThings.length === 0}
-    <p class="text-gray-500 basis-full">Nothing found matching your criteria.</p>
+    <p class="text-base-content/60 basis-full">Nothing found matching your criteria.</p>
   {/if}
   {#each filteredThings as thing, i}
     <ThingCard {thing} loading={i < 2 ? "eager" : "lazy"} />

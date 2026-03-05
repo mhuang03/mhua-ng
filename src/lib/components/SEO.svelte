@@ -7,7 +7,7 @@
     image: "https://mhua.ng/favicon-96x96.png",
   };
 
-  let { formatTitle = true, title = "", description = commonData.description, image = commonData.image } = $props();
+  let { formatTitle = true, title = "", description = commonData.description, image = commonData.image, ogType = "website" } = $props();
 
   let formattedTitle = $derived(
     formatTitle ? (title ? `${title} | ${commonData.title}` : `${commonData.title}`) : title
@@ -25,7 +25,7 @@
   <meta property="og:title" content={formattedTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={image} />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content={ogType} />
   <meta property="og:url" content={`https://mhua.ng${page.url.pathname}`} />
   <meta property="og:site_name" content="mhua.ng" />
 
