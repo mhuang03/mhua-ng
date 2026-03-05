@@ -1,6 +1,6 @@
 import type { Post } from "$lib/types";
 
-export async function getPosts() {
+export async function getThoughts() {
   let posts: Post[] = [];
   let tags: string[] = [];
 
