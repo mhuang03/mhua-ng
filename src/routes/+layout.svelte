@@ -3,6 +3,7 @@
   import Header from "$lib/components/Header.svelte";
   import Drawer from "$lib/components/Drawer.svelte";
   import "../styles.css";
+  import interWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 
   let { children } = $props();
 
@@ -19,6 +20,10 @@
     });
   });
 </script>
+
+<svelte:head>
+  <link rel="preload" href={interWoff2} as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="high" />
+</svelte:head>
 
 <Drawer>
   <a
