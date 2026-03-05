@@ -13,4 +13,7 @@ export default defineConfig({
       compiler: 'svelte',
     }),
 	],
+  build: {
+    minify: true,
+  }
 });
